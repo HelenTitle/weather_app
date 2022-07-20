@@ -1,4 +1,4 @@
-let currentDayToday = new Date();
+/*let currentDayToday = new Date();
 
 function showDate(date) {
   let days = [
@@ -75,6 +75,9 @@ function displayWeather(response) {
 
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+
+
 }
 
 function searchCity(city) {
@@ -92,7 +95,6 @@ function handleSubmit(event) {
 function searchLocation(position) {
   let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -109,3 +111,10 @@ searchForm.addEventListener("click", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current_button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+*/
+
+
+let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=NewYork&appid=${apiKey}&units=metric`;
+axios.get(URL).then(displayTemperature);
