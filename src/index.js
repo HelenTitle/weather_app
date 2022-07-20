@@ -114,7 +114,16 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 */
 
+function displayTemperature(response){
+  console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = Math.round(response.data.name);
+
+
+}
+
 
 let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=NewYork&appid=${apiKey}&units=metric`;
-axios.get(URL).then(displayTemperature);
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemperature);
