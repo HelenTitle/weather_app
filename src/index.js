@@ -118,7 +118,12 @@ function displayTemperature(response){
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = Math.round(response.data.name);
+  let descriptionElement = document.querySelector("#descriptuin");
+
+
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
 
 
 }
