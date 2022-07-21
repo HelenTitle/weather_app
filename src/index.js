@@ -42,15 +42,31 @@ function displayTemperature(response){
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.wheather[0].icon}@2x.png`) ;
+  iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) ;
+  iconElement.setAttribute ("alt",  response.data.weather[0].description);
 
 
 }
 
-let city = "Paris";
-let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
+function handleSubmit(event){
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city_input");
+  search(cityInputElement.value);
+}
+
+function search(city){
+  let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
+
+}
+
+
+
+
+let form = document.querySelector("#search_form");
+form.addEventListener("submit", handleSubmit)
+
 
 
 
