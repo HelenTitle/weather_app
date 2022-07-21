@@ -3,6 +3,13 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
   let days = [
     "Sunday",
     "Monday",
@@ -38,9 +45,9 @@ function displayTemperature(response){
 
 }
 
-
+let city = "Paris";
 let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
 
 
