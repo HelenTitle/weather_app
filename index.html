@@ -29,7 +29,7 @@
         padding-right: 25px;
       }
       .sign {
-        color: #006ec5;
+        color: #EC6E4C;
         text-align: center;
         margin-top: 20px;
       }
@@ -42,8 +42,8 @@
       .btn-primary:hover,
       .btn-primary:active,
       .btn-primary:visited {
-        background-color: #006ec5 !important;
-        border: 2px solid #006ec5;
+        background-color: #EC6E4C !important;
+        border: 2px solid #EC6E4C;
         border-radius: 0px;
         width: 100%;
       }
@@ -58,14 +58,18 @@
       }
 
       
+      :focus {
+    outline: 0;
+    outline-offset: 0;
+}
 
       .form-control {
-        border: 2px solid #006ec5 !important;
+        border: 2px solid #EC6E4C !important;
         border-radius: 0px;
-      }
+       }
     
       .day{
-               color: #006ec5 ;
+               color: #EC6E4C ;
                margin-top: 10px;
       }
       .col-5{
@@ -74,7 +78,7 @@
       }
 
       .city{
-               color: #006ec5;
+               color: #EC6E4C;
       }
       .temperature{
         padding-left: 20px;
@@ -92,21 +96,26 @@
       }
 
       .h1{
-        color:#006ec5;
+        color:#EC6E4C;
       }
 
       .day_one, .day_two, .day_three, .day_four{
-        color: #006ec5;       
-        border-right: 2px dashed #006ec5;
+        color: #EC6E4C;       
+        border-right: 2px dashed #EC6E4C;
       }
 
       .day_five{
-        color: #006ec5;       
+        color: #EC6E4C;       
       }
 
       .humidity{
         margin-left: 20px;
         margin-right: 20px;
+      }
+
+      .temp{
+        color:#EC6E4C;
+        text-decoration: none;
       }
       .temp:hover{
 
@@ -146,6 +155,7 @@
                 placeholder="enter your city"
                 aria-label="enter the city"
                 id="city_input"
+                autocomplete="off"
               />
             </div>
             <div class="col-3">
@@ -166,7 +176,7 @@
         <div class=" city d-flex flex-row justify-content-start align-items-center">
             <div><h1 class="fw-bold text-uppercase" id="city"> </div> 
             <div class="temperature"><h1 class="fw-bold" id="temperature">+27</h1></div>
-            <div><h2 class="fw-bold"> <span id="celcius" class="temp">°C</span>/<span id="fahrenhight" class="temp">°F</span></h2></div>
+            <div><h2 class="fw-bold"> <span id="celcius" class="temp">°C</span>/<a href="#" id="fahrenhight" class="temp">°F</a></h2></div>
             <div ><img id="icon" alt="sunny" src="./images/sun.png"></div>
         </div>
         <div class="weather_details d-flex flex-row justify-content-start align-items-center">
