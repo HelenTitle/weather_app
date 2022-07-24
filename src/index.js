@@ -32,11 +32,13 @@ function displayTemperature(response){
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
+  celciusTemperature = response.data.main.temp;
   
 
 
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -91,11 +93,12 @@ fahrenhightLink.addEventListener("click", displayFahrenhightTemperature);
 
 function displayFahrenhightTemperature(event){
   event.preventDefault();
-  let fahrenhightTemperature = (14*9)/5 + 32;
+  let fahrenhightTemperature = (celciusTemperature*9)/5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenhightTemperature);
 }
 
+let celciusTemperature = null;
 
 
 
