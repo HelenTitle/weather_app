@@ -86,6 +86,17 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+let fahrenhightLink = document.querySelector("#fahrenhight-link");
+fahrenhightLink.addEventListener("click", displayFahrenhightTemperature);
+
+function displayFahrenhightTemperature(event){
+  event.preventDefault();
+  let fahrenhightTemperature = (14*9)/5 + 32;
+  let temperatureElement= document.querySelector(#temperature);
+  temperatureElement.innerHTML = Math.round(fahrenhightTemperature);
+}
+
+
 
 
 
