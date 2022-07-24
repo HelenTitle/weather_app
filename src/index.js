@@ -92,7 +92,7 @@ fahrenhightLink.addEventListener("click", displayFahrenhightTemperature);
 function displayFahrenhightTemperature(event){
   event.preventDefault();
   let fahrenhightTemperature = (14*9)/5 + 32;
-  let temperatureElement= document.querySelector(#temperature);
+  let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenhightTemperature);
 }
 
