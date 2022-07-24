@@ -72,7 +72,19 @@ searchFormButton.addEventListener("click", handleSubmit);
 
 
 
+let currentLocationButton = document.querySelector("#current_button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
+function searchLocation(position) {
+  let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
 
 
