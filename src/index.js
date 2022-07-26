@@ -46,6 +46,31 @@ function displayTemperature(response){
 
 }
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="d-flex flex-row justify-content-center align-items-center">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day){
+
+    forecastHTML = forecastHTML + `
+  
+                <div class="day_one d-flex flex-column justify-content-center align-items-center">
+                <div><h3>Fri</h3></div>
+                <div ><img src="http://openweathermap.org/img/wn/10d@2x.png"></div>
+                <div><h3 class="fw-bold">+26 °C</h3></div>
+                <div><h3 class=" temperature_min fw-bold">+18 °C</h3>
+                </div>
+              </div>
+  `
+
+
+
+  });
+  
+  forecastHTML = forecastHTML + `</div>` 
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function handleSubmit(event){
   event.preventDefault();
   let cityInputElement = document.querySelector("#city_input");
@@ -101,6 +126,8 @@ function displayCelsiusTemperature(event){
 
 
 let celciusTemperature = null;
+
+displayForecast();
 
 
 
