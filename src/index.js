@@ -59,7 +59,7 @@ function displayForecast(response){
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="d-flex flex-row justify-content-center align-items-center">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (forecastDay){
+  forecast.forEach(function (forecastDay){
      forecastHTML = forecastHTML +  `
   
                 <div class="day_one d-flex flex-column justify-content-center align-items-center">
