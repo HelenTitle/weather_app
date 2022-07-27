@@ -72,8 +72,8 @@ function displayForecast(response){
                 <div class="day_one d-flex flex-column justify-content-center align-items-center">
                 <div><h3>${formatDay(forecastDay.dt)}</h3></div>
                 <div ><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"></div>
-                <div><h3 class="fw-bold">${forecastDay.temp.max} °C</h3></div>
-                <div><h3 class=" temperature_min fw-bold">${forecastDay.temp.min} °C</h3>
+                <div><h3 class="fw-bold">${Math.round(forecastDay.temp.max)} °C</h3></div>
+                <div><h3 class=" temperature_min fw-bold">${Math.round(forecastDay.temp.min)} °C</h3>
                 </div>
               </div>
   `
