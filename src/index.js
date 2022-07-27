@@ -23,8 +23,15 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast (coordinates){
+  console.log(coordinates);
+  let apiKey = "a0af2ff035fd05f805d6f07c483c3bc8";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric;
+  `
+  axios.get(apiURL).then(displayForecast);
+}
+
 function displayTemperature(response){
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -44,20 +51,23 @@ function displayTemperature(response){
   iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) ;
   iconElement.setAttribute ("alt",  response.data.weather[0].description);
 
+  getForecast(response.data.coord);
+
 }
 
-function displayForecast(){
+function displayForecast(response){
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="d-flex flex-row justify-content-center align-items-center">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day){
-     forecastHTML = forecastHTML + `
+  days.forEach(function (forecastDay){
+     forecastHTML = forecastHTML +  `
   
                 <div class="day_one d-flex flex-column justify-content-center align-items-center">
-                <div><h3>${day}</h3></div>
-                <div ><img src="http://openweathermap.org/img/wn/10d@2x.png"></div>
-                <div><h3 class="fw-bold">+26 °C</h3></div>
-                <div><h3 class=" temperature_min fw-bold">+18 °C</h3>
+                <div><h3>${forecastDay.dt}</h3></div>
+                <div ><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"></div>
+                <div><h3 class="fw-bold">${forecastDay.temp.max} °C</h3></div>
+                <div><h3 class=" temperature_min fw-bold">${forecastDay.temp.min} °C</h3>
                 </div>
               </div>
   `
@@ -126,7 +136,7 @@ function displayCelsiusTemperature(event){
 
 let celciusTemperature = null;
 
-displayForecast();
+
 
 
 
