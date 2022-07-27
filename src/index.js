@@ -56,7 +56,9 @@ function displayTemperature(response){
 function formatDay(timestep){
   let date = new Date (timestep * 1000);
   let day = date.getDay();
-return day;
+  let days = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat" ];
+
+return days[day];
 }
 
 function displayForecast(response){
