@@ -53,6 +53,11 @@ function displayTemperature(response){
 
   getForecast(response.data.coord);
 }
+function formatDay(timestep){
+  let date = new Date (timestep * 1000);
+  let day = date.getDay();
+return day;
+}
 
 function displayForecast(response){
   let forecast = response.data.daily;
@@ -63,7 +68,7 @@ function displayForecast(response){
      forecastHTML = forecastHTML +  `
   
                 <div class="day_one d-flex flex-column justify-content-center align-items-center">
-                <div><h3>${forecastDay.dt}</h3></div>
+                <div><h3>${formatDay(forecastDay.dt)}</h3></div>
                 <div ><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"></div>
                 <div><h3 class="fw-bold">${forecastDay.temp.max} °C</h3></div>
                 <div><h3 class=" temperature_min fw-bold">${forecastDay.temp.min} °C</h3>
