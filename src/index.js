@@ -52,7 +52,6 @@ function displayTemperature(response){
   iconElement.setAttribute ("alt",  response.data.weather[0].description);
 
   getForecast(response.data.coord);
-
 }
 
 function displayForecast(response){
@@ -71,8 +70,6 @@ function displayForecast(response){
                 </div>
               </div>
   `
-
-
 
   });
   
