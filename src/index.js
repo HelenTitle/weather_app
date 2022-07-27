@@ -49,13 +49,12 @@ function displayTemperature(response){
 function displayForecast(){
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="d-flex flex-row justify-content-center align-items-center">`;
-  let days = ["Thu", "Fri", "Sat"];
+  let days = ["Thu", "Fri", "Sat", "Sun"];
   days.forEach(function (day){
-
-    forecastHTML = forecastHTML + `
+     forecastHTML = forecastHTML + `
   
                 <div class="day_one d-flex flex-column justify-content-center align-items-center">
-                <div><h3>Fri</h3></div>
+                <div><h3>${day}</h3></div>
                 <div ><img src="http://openweathermap.org/img/wn/10d@2x.png"></div>
                 <div><h3 class="fw-bold">+26 °C</h3></div>
                 <div><h3 class=" temperature_min fw-bold">+18 °C</h3>
