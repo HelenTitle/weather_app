@@ -65,11 +65,13 @@ function displayForecast(response){
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="d-flex flex-row justify-content-center align-items-center">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  forecast.forEach(function (forecastDay){
+  forecast.forEach(function (forecastDay,index){
+    console.log(index);
+
+    if (index<5){
      forecastHTML = forecastHTML +  `
   
-                <div class="day_one d-flex flex-column justify-content-center align-items-center">
+                <div class="day_${index} d-flex flex-column justify-content-center align-items-center">
                 <div><h3>${formatDay(forecastDay.dt)}</h3></div>
                 <div ><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"></div>
                 <div><h3 class="fw-bold">${Math.round(forecastDay.temp.max)} °C</h3></div>
@@ -77,6 +79,7 @@ function displayForecast(response){
                 </div>
               </div>
   `
+    }
 
   });
   
