@@ -1,0 +1,99 @@
+ 
+      .body{
+        font-family: 'DM Sans', sans-serif;
+      }
+      .wpapper {
+        margin-top: 50px;
+        width: 700px;
+        display: block;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      .sign {
+        color: #EC6E4C;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .description {
+        margin-top: 15px;
+        margin-bottom: 50px;
+      }
+      .btn-check:focus+.btn, .btn:focus {
+       border-color: #EC6E4C;
+      }
+      .btn-primary,
+      .btn-primary:hover,
+      .btn-primary:active,
+      .btn-primary:visited {
+        background-color: #EC6E4C !important;
+        border: 2px solid #EC6E4C;
+        border-radius: 0px;
+        width: 100%;
+      }
+      .current{
+        
+        background-color: #a1a3a4 !important;
+        border: 2px solid #a1a3a4;
+        border-radius: 0px;
+        width: 100%;
+      }
+     .form-control {
+        border: 2px solid #EC6E4C !important;
+        border-radius: 0px;
+       }
+     .day{
+               color: #EC6E4C ;
+               margin-top: 10px;
+      }
+      .col-5{
+        border: 1px;
+      }
+      .city{
+               color: #EC6E4C;
+      }
+      .temperature{
+        padding-left: 20px;
+        padding-right: 10px;
+      }
+      .forecast{
+             width: 100%;
+             margin-top: 20px;
+             margin-bottom: 20px;
+      }
+     .h1{
+        color:#EC6E4C;
+      }
+      
+      .day_0, .day_1, .day_2, .day_3{
+        color: #EC6E4C;       
+        border-right: 2px dashed #EC6E4C;
+        width: 130px;
+      }
+      .day_4{
+        color: #EC6E4C;
+        width: 130px;       
+      }
+      .humidity{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .temp{
+        color:#EC6E4C;
+        text-decoration: none;
+      }
+      .temp:hover{
+        color:rgb(106, 104, 104);
+        cursor: pointer;
+      }
+      .git{
+       text-align: center;
+        margin-top: 10px;
+      }
+      .gitlink{
+        color: #a1a3a4;
+      }
+      .temperature_min{
+               color:rgb(106, 104, 104);
+      }
+            
+    
